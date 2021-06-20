@@ -918,8 +918,8 @@ public:
    *  because the returned references/pointers can be used
    *  to change state of the base class.
    */
-  reference operator*() const { return const_cast<reference>(deref()); }
-  pointer operator->() const { return const_cast<pointer>(&deref()); }
+  reference operator*() { return deref(); }
+  pointer operator->() { return &deref(); }
 };
 
 inline void swap(Value& a, Value& b) { a.swap(b); }
